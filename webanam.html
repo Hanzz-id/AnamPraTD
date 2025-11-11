@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="">
+    <title>Madrasah Mutawassithah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ====================================
+        GAYA DASAR
+        ==================================== */
+        :root {
+            /* Definisi ukuran font dasar untuk kemudahan scaling */
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            /* Terapkan font di body untuk seluruh halaman */
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .halamanUtama {
+            background-image: url('gambar.jpg');
+            min-height: 100vh;
+            background-position: center;
+            background-size: cover;
+            /* Menggunakan Flexbox untuk memposisikan konten utama */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ====================================
+        LOGO
+        ==================================== */
+        .logo {
+            /* Menggunakan unit relatif (vw) untuk ukuran yang responsif */
+            width: 8vw;
+            max-width: 100px;
+            /* Batasan maksimum agar tidak terlalu besar di desktop besar */
+            height: auto;
+            margin: 1rem;
+            /* Gunakan rem untuk margin */
+            border-radius: 5%;
+        }
+
+        /* ====================================
+        KONTEN UTAMA (Judul)
+        ==================================== */
+        .container {
+            /* Membiarkan container mengambil sisa ruang vertikal */
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 3rem;
+            /* Memberi ruang di bawah judul */
+        }
+
+        .judul {
+            text-transform: uppercase;
+            font-weight: 400;
+            color: azure;
+            margin: 10px 0;
+            /* Perbaiki sintaks margin */
+            font-size: 2.5rem;
+            /* Ukuran font relatif */
+        }
+
+        .pemisah {
+            margin: 0.5rem auto;
+            width: 25%;
+            max-width: 300px;
+            border-color: azure;
+        }
+
+        .awalan {
+            color: azure;
+            font-family: courier, monospace;
+            /* Font fallback */
+            font-weight: 300;
+            text-transform: capitalize;
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        /* ====================================
+        INPUT DAN TOMBOL
+        ==================================== */
+        .prabutton {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 10rem;
+            /* Ruang di bawah form */
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input {
+            /* Lebar Input menjadi relatif terhadap viewport */
+            width: 30vw;
+            max-width: 300px;
+            /* Batasan maksimum agar tidak terlalu lebar */
+            height: 30px;
+            padding: 0.5rem;
+            border-radius: 5px;
+            text-align: center;
+            background-color: rgba(206, 200, 200, 0.9);
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            display: inline-block;
+            background: #41627ca0;
+            color: #fff;
+            /* Lebar tombol menjadi relatif terhadap viewport */
+            width: 15vw;
+            max-width: 150px;
+            height: 40px;
+            border-radius: 50px;
+            border: thin solid #888;
+            box-shadow: 1px 1px 1px grey;
+            white-space: nowrap;
+            font-size: 1rem;
+            font-weight: normal;
+            font-family: inherit;
+            margin: 1rem 0;
+            text-transform: capitalize;
+            transition: all 0.5s;
+            /* Durasi transisi lebih singkat */
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            /* Efek hover lebih halus */
+            background-color: #fff;
+            color: black;
+        }
+
+        /* ====================================
+        FOOTER
+        ==================================== */
+        .akhiran {
+            color: azure;
+            margin: 1rem;
+            font-size: 0.85rem;
+        }
+
+        /* ====================================
+        MEDIA QUERIES (Untuk Layar Ponsel)
+        ==================================== */
+        @media screen and (max-width: 600px) {
+
+            /* Global font size sedikit lebih kecil di HP */
+            :root {
+                font-size: 15px;
+            }
+
+            .logo {
+                width: 15vw;
+                /* Logo lebih besar di HP */
+                max-width: 80px;
+                margin: 0.8rem;
+            }
+
+            .judul {
+                font-size: 1.8rem;
+                /* Judul lebih kecil */
+            }
+
+            .awalan {
+                font-size: 1.2rem;
+                /* Awalan lebih kecil */
+            }
+
+            input {
+                width: 75vw;
+                /* Input mengambil hampir seluruh lebar layar */
+                height: 30px;
+            }
+
+            button {
+                width: 55vw;
+                /* Tombol lebih lebar */
+                height: 45px;
+                font-size: 1.1rem;
+                margin: 1rem 0 2rem 0;
+            }
+
+            .akhiran {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="halamanUtama">
+        <img class="logo" src="anamfc.png" alt="Logo Madrasah">
+        <div class="container">
+            <div class="center">
+                <h1 class="judul">madrasah mutawassithah</h1>
+                <hr class="pemisah">
+                <h1 class="awalan">angkatan 06</h1>
+            </div>
+        </div>
+        <div class="prabutton">
+            <form action="anam.html" method="get">
+                <input type="text" placeholder="Masukkan Namamu Disini" name="namasantri"><br>
+                <button type="submit">masuk</button>
+            </form>
+        </div>
+
+        <footer class="akhiran">Copyright &copy; by angkatan_06</footer>
+    </div>
+</body>
+
+</html>
